@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+ <display-name>ams-web</display-name>
+ <context-param>
+  <param-name>javax.faces.STATE_SAVING_METHOD</param-name>
+  <param-value>server</param-value>
+ </context-param>
+ <filter>
+  <filter-name>SessionTimeoutFilter</filter-name>
+  <filter-class>rs.ac.bg.rcub.ams.web.filter.SessionTimeoutFilter</filter-class>
+  <init-param>
+   <description>Timeout page to be displayed when session expires</description>
+   <param-name>timeoutPage</param-name>
+   <param-value>errorSessionExpired.jsf</param-value>
+  </init-param>
+ </filter>
+ <filter-mapping>
+  <filter-name>SessionTimeoutFilter</filter-name>
+  <url-pattern>*.jsf</url-pattern>
+ </filter-mapping>
+ <listener>
+  <listener-class>com.sun.faces.config.ConfigureListener</listener-class>
+ </listener>
+ <servlet>
+  <servlet-name>Faces Servlet</servlet-name>
+  <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+  <load-on-startup>1</load-on-startup>
+ </servlet>
+ <servlet-mapping>
+  <servlet-name>Faces Servlet</servlet-name>
+  <url-pattern>*.jsf</url-pattern>
+ </servlet-mapping>
+ <error-page>
+  <exception-type>java.lang.Exception</exception-type>
+  <location>/error.jsf</location>
+ </error-page>
+ <security-constraint>
+  <web-resource-collection>
+   <web-resource-name>Admin pages</web-resource-name>
+   <description>Protect admin pages</description>
+   <url-pattern>/admin/*</url-pattern>
+  </web-resource-collection>
+  <auth-constraint>
+   <role-name>admin</role-name>
+  </auth-constraint>
+ </security-constraint>
+ <security-constraint>
+  <web-resource-collection>
+   <web-resource-name>Regular pages</web-resource-name>
+   <description>Protect regular pages</description>
+   <url-pattern>/*</url-pattern>
+  </web-resource-collection>
+  <auth-constraint>
+   <role-name>web-user</role-name>
+  </auth-constraint>
+ </security-constraint>
+ <login-config>
+  <auth-method>CLIENT-CERT</auth-method>
+  <!-- <auth-method>BASIC</auth-method> -->
+  <realm-name>AMS - WEB</realm-name>
+ </login-config>
+ <security-role>
+  <role-name>admin</role-name>
+ </security-role>
+ <security-role>
+  <role-name>web-user</role-name>
+ </security-role>
+</web-app>

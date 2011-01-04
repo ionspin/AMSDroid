@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+<jboss>
+	<security-domain>java:/jaas/ams</security-domain>
+
+
+	<!--
+		change contextRoot to context-root and remove the schema declaration
+		and location in jboss.xml
+	-->
+	
+	<webservices>
+		<context-root>/ams</context-root>
+	</webservices>
+
+	<enterprise-beans>
+		<session>
+			<ejb-name>AlertServiceBean</ejb-name>
+			<!-- 	<jndi-name>ejb/EJB3Bean</jndi-name> -->
+			<port-component>
+				<port-component-name>AlertService</port-component-name>
+				<port-component-uri>/*</port-component-uri>
+				<!--<auth-method>BASIC</auth-method>-->
+				<auth-method>CLIENT-CERT</auth-method>
+				<transport-guarantee>NONE</transport-guarantee>
+				<secure-wsdl-access>false</secure-wsdl-access>
+			</port-component>
+		</session>
+	</enterprise-beans>
+
+</jboss>

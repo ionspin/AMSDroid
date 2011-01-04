@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Class-Path: smack.jar smackx.jar smackx-debug.jar smackx-jingle.jar
+

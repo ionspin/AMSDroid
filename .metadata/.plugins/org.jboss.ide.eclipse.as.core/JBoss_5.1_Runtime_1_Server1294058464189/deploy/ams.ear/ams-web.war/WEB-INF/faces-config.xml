@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config version="1.2" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd">
+	<managed-bean>
+		<managed-bean-name>targetBean</managed-bean-name>
+		<managed-bean-class>rs.ac.bg.rcub.ams.web.beans.TargetBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>subsBean</managed-bean-name>
+		<managed-bean-class>rs.ac.bg.rcub.ams.web.beans.SubsBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>categoryBean</managed-bean-name>
+		<managed-bean-class>rs.ac.bg.rcub.ams.web.beans.CategoryBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>listAlertsBean</managed-bean-name>
+		<managed-bean-class>rs.ac.bg.rcub.ams.web.beans.ListAlertsBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>listMessagesBean</managed-bean-name>
+		<managed-bean-class>rs.ac.bg.rcub.ams.web.beans.ListMessagesBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>userInfoBean</managed-bean-name>
+		<managed-bean-class>rs.ac.bg.rcub.ams.web.beans.UserInfoBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>errorInfoBean</managed-bean-name>
+		<managed-bean-class>rs.ac.bg.rcub.ams.web.util.ErrorInfoBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+
+	<!--
+		<managed-bean> <managed-bean-name>navigationBean</managed-bean-name>
+		<managed-bean-class>rs.ac.bg.rcub.ams.web.beans.NavigationBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope> </managed-bean>
+	-->
+	<navigation-rule>
+		<from-view-id>/listAlerts.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>details</from-outcome>
+			<to-view-id>/messages.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<!-- Toc rules. Use redirect to make sure security constraints work! -->
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>listAlerts</from-outcome>
+			<to-view-id>/listAlerts.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>subscribe</from-outcome>
+			<to-view-id>/subscribe.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>category</from-outcome>
+			<to-view-id>/admin/addCategory.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>target</from-outcome>
+			<to-view-id>/admin/addTarget.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<application>
+		<!--
+			Failed :( <navigation-handler>
+			rs.ac.bg.rcub.ams.web.navigation.AMSNavigationHandler</navigation-handler>
+		-->
+	</application>
+</faces-config>

@@ -1,0 +1,4 @@
+#Mon Jan 03 13:54:12 CET 2011
+module-start-timeout=300000
+runtimes=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<runtimes>\r\n  <runtime PROPERTY_EXEC_ENVIRONMENT\="J2SE-1.4" id\="JBoss 5.1 Runtime" location\="D\:/Program Files/jboss-5.1.0.GA" name\="JBoss 5.1 Runtime" org.jboss.ide.eclipse.as.core.runtime.configurationLocation\="server" org.jboss.ide.eclipse.as.core.runtime.configurationName\="default" runtime-type-id\="org.jboss.ide.eclipse.as.runtime.51" timestamp\="0"/>\r\n  <runtime PROPERTY_EXEC_ENVIRONMENT\="J2SE-1.4" id\="JBoss 5.1 Runtime 1" location\="D\:/Program Files/jboss-5.1.0.GA" name\="JBoss 5.1 Runtime 1" org.jboss.ide.eclipse.as.core.runtime.configurationLocation\="server" org.jboss.ide.eclipse.as.core.runtime.configurationName\="default" runtime-type-id\="org.jboss.ide.eclipse.as.runtime.51" timestamp\="0"/>\r\n</runtimes>\r\n
+eclipse.preferences.version=1

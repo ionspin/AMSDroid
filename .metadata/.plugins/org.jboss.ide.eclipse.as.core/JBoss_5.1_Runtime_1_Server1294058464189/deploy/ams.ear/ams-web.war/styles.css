@@ -1,0 +1,193 @@
+@CHARSET "ISO-8859-1";
+
+body {
+	background: #eee;
+	font-size: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	max-width: 775px;
+	min-width: 775px;
+}
+
+DIV.main {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+}
+
+TABLE.errorMessage TD{
+	color: red;
+}
+
+SELECT {
+	font-size: 0.7em;
+	max-width: 150px;
+	color: #050;
+	background-color: #fed;
+}
+
+INPUT {
+	color: #050;
+	/* font: bold 84% 'trebuchet ms', helvetica, sans-serif; */
+	background-color: #fed;
+	border: 1px solid;
+	border-color: #696 #363 #363 #696;
+}
+
+.headerUserInfo {
+	color: navy;
+	font-size: 0.8em;
+	border: thin;
+	border-color: black;
+	background-color: silver;
+	float: left;
+	text-align: center;
+	width: 100%;
+}
+
+.tocMenu {
+	font-size: 0.9em;
+}
+
+DIV.footer {
+	padding-top: 10px;
+	font-size: 0.8em;
+	text-align: center;
+	clear: both;
+}
+
+DIV.body {
+	clear: both;
+	margin-top: 4px;
+	min-height: 520px;
+}
+
+DIV.toc {
+	border-style: solid;
+	/* position: relative; */ /* top: 20px; */
+	border-width: 1pt;
+	/* border-color: white; */
+	width: 12%; padding-left : 5px;
+	padding-bottom: 2px;
+	padding-right: 2px;
+    padding-left: 5px;
+	font-size: 0.8em;
+	float: left;
+}
+
+DIV.page { /* position: relative; */
+	margin-left: 2%;
+	float: left;
+	width: 84%;
+}
+
+TABLE TH {
+	background-color: #ddd;
+	color: #BB0000;
+	border-style: 1px solid #000;
+	text-align: center;
+}
+
+TABLE TD {
+	color: black;
+}
+
+TABLE TR.odd {
+	background-color: #DDFFFF;
+}
+
+TABLE TR.even {
+	background-color: #FBFBFB;
+}
+
+table.messages { /*font-size: medium;*/
+	
+}
+
+table.messages TH {
+	background-color: #ddd;
+	color: #BB0000;
+	border-style: 1px solid #000;
+}
+
+table.messages TD {
+	color: black;
+}
+
+table.alerts {
+	font-size: 0.8em;
+	border: thin;
+}
+
+table.alerts TH {
+	background-color: #ddd;
+	color: #BB0000;
+	border-style: 1px solid #000;
+	min-width: 55px; /* BEWARE!*/
+}
+
+table.alerts TR.odd {
+	background-color: #DDFFFF;
+}
+
+table.alerts TR.even {
+	background-color: #FBFBFB;
+}
+
+table.subs {
+	font-size: 0.8em;
+	/* border: thin; */
+}
+
+table.subs TH {
+	background-color: #ddd;
+	color: #BB0000;
+	border-style: 1px solid #000;
+}
+
+table.subs TR.odd {
+	background-color: #DDFFFF;
+}
+
+table.subs TR.even {
+	background-color: #FBFBFB;
+}
+
+table.cats {
+	font-size: 0.8em;
+	/* border: thin; */
+}
+
+table.cats TH {
+	background-color: #ddd;
+	color: #BB0000;
+	border-style: 1px solid #000;
+}
+
+table.cats TR.odd {
+	background-color: #DDFFFF;
+}
+
+table.cats TR.even {
+	background-color: #FBFBFB;
+}
+
+table.target {
+	font-size: 0.8em;
+	/* border: thin; */
+}
+
+table.target TH {
+	background-color: #ddd;
+	color: #BB0000;
+	border-style: 1px solid #000;
+}
+
+table.target TR.odd {
+	background-color: #DDFFFF;
+}
+
+table.target TR.even {
+	background-color: #FBFBFB;
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#listAlerts.jsp" PATH="/listAlerts.jsp"
+  SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#listAlerts.jsp:0" NAME="item"
+   PATH="/listAlerts.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="details::#messages.jsp" NAME="output"
+    PATH="/messages.jsp" TARGET="rules:#messages.jsp" TITLE="details" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#messages.jsp" PATH="/messages.jsp"
+  SHAPE="240,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:" SHAPE="32,129,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules::0" NAME="item" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="listAlerts::#listAlerts.jsp" NAME="output"
+    PATH="/listAlerts.jsp" TARGET="rules:#listAlerts.jsp"
+    TITLE="listAlerts" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="subscribe::#subscribe.jsp" NAME="output1"
+    PATH="/subscribe.jsp" TARGET="rules:#subscribe.jsp"
+    TITLE="subscribe" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="category::#admin#addCategory.jsp"
+    NAME="output2" PATH="/admin/addCategory.jsp"
+    TARGET="rules:#admin#addCategory.jsp" TITLE="category" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="target::#admin#addTarget.jsp" NAME="output3"
+    PATH="/admin/addTarget.jsp" TARGET="rules:#admin#addTarget.jsp"
+    TITLE="target" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#subscribe.jsp" PATH="/subscribe.jsp"
+  SHAPE="288,145,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#admin#addTarget.jsp"
+  PATH="/admin/addTarget.jsp" SHAPE="288,465,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#admin#addCategory.jsp"
+  PATH="/admin/addCategory.jsp" SHAPE="288,353,0,0" model-entity="JSFProcessGroup"/>
+</PROCESS>

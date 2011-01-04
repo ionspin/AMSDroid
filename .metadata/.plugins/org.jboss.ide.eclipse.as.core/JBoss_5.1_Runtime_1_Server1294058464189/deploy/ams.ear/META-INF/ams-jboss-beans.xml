@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deployment xmlns="urn:jboss:bean-deployer:2.0">
+	<application-policy xmlns="urn:jboss:security-beans:1.0"
+		name="ams">
+
+		<!--
+			Client cert HTTPS auth using glite-trustmanager
+
+			Careful with line breaking on autoformat!
+			
+			default role - if enabled, adds a default role to every authenticated
+			user  
+        -->
+
+		<authentication>
+			<login-module
+				code="rs.ac.bg.rcub.auth.jboss.security.GliteCertRolesLoginModule"
+				flag="required">
+				<module-option name="rolesProperties">conf/props/cert-roles.properties</module-option>
+				<module-option name="unauthenticatedIdentity">anonymous</module-option>
+                <module-option name="defaultRoleEnabled">true</module-option>
+                <module-option name="defaultRole">web-user</module-option>
+			</login-module>
+		</authentication>
+
+
+		<!--
+			User/Pass HTTP basic auth.
+			In production use this with SSL TLS! Otherwise passwords will be
+			sent unencrypted over HTTP
+		
+		<authentication>
+			<login-module code="org.jboss.security.auth.spi.UsersRolesLoginModule"
+				flag="required">
+				<module-option name="usersProperties">conf/props/users.properties</module-option>
+				<module-option name="rolesProperties">conf/props/roles.properties</module-option>
+				<module-option name="unauthenticatedIdentity">anonymous</module-option>
+			</login-module>
+		</authentication>
+        -->
+
+	</application-policy>
+</deployment>
